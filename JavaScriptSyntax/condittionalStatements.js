@@ -6,7 +6,7 @@ function checkNum(n) {
     console.log(n, "là số lẽ");
   }
 }
-checkNum();
+checkNum(12);
 // Viết một chương trình nhập tuổi của người dùng và in ra một trong các kết quả:
 // "Trẻ em" nếu tuổi < 13.
 // "Thiếu niên" nếu 13 ≤ tuổi < 18.
@@ -36,16 +36,25 @@ checkYear(2000);
 //Tìm số lớn nhất trong 3 số
 //Nhập vào 3 số a, b, c và tìm số lớn nhất
 function findMaxNum(a, b, c) {
-  if (c < a) {
-    console.log(`${a} là số lớn nhât`);
-  } else if (c < b) {
-    console.log(`${b} là số lớn nhất`);
-  } else {
-    console.log(`${c} là số lớn nhất`);
-    
+  let max = c; //giả sử răng c là lớn nhất
+  if (a > max) {
+    max = a; // cấp nhật a là lớn nhất nên a lớn hơn max
   }
+  if (b > max) {
+    max = b; //cấp nhật b là lớn nhất nên b lớn hơn max
+  }
+  console.log(`${max} là số lớn nhất`);
 }
-findMaxNum(12, 2, 4);
+findMaxNum(4, 12, 2); 
+// dùng hàm sort tìm số lớn nhất trong 3 số 
+function MaxNum(a,b,c){
+  const numbers =[a,b,c];
+  numbers.sort((x,y)=>x-y); //sắp xếp theo thứ tự mảng tăng dần
+  console.log(`${numbers[numbers.length-1]} là số lớn nhất`);
+
+}
+ MaxNum(12,33,2)
+
 // Kiểm tra tam giác hợp lệ
 // Nhập độ dài 3 cạnh của tam giác và kiểm tra xem có phải tam giác hợp lệ không:
 // Tam giác hợp lệ nếu tổng hai cạnh bất kỳ luôn lớn hơn cạnh còn lại.
