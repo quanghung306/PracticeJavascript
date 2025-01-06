@@ -46,14 +46,13 @@ function findMaxNum(a, b, c) {
   console.log(`${max} là số lớn nhất`);
 }
 findMaxNum(4, 12, 2); 
-// dùng hàm sort tìm số lớn nhất trong 3 số 
-function MaxNum(a,b,c){
-  const numbers =[a,b,c];
-  numbers.sort((x,y)=>x-y); //sắp xếp theo thứ tự mảng tăng dần
-  console.log(`${numbers[numbers.length-1]} là số lớn nhất`);
-
+// dùng hàm sort tìm số lớn nhất 
+function MaxNum(arr){
+   arr.sort((x,y)=>x-y); //sắp xếp theo thứ tự mảng tăng dần
+   return console.log(`${arr[arr.length-1]} là số lớn nhất`);
 }
- MaxNum(12,33,2)
+const numbers = [6,2,3,5,3,10];
+MaxNum(numbers)
 
 // Kiểm tra tam giác hợp lệ
 // Nhập độ dài 3 cạnh của tam giác và kiểm tra xem có phải tam giác hợp lệ không:
