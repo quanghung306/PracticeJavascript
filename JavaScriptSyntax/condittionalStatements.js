@@ -49,7 +49,7 @@ findMaxNum(4, 12, 2);
 // dùng hàm sort tìm số lớn nhất 
 function MaxNum(arr){
    arr.sort((x,y)=>x-y); //sắp xếp theo thứ tự mảng tăng dần
-   return console.log(`${arr[arr.length-1]} là số lớn nhất`);
+   console.log(`${arr[arr.length-1]} là số lớn nhất`);
 }
 const numbers = [6,2,3,5,3,10];
 MaxNum(numbers)

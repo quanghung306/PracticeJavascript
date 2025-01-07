@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercise 3</title>
+</head>
+<body>
+  <div> Delete Me!</div>
+  <div> Delete Me!</div>
+  <div> Delete Me!</div>
+  <button id="DeleteBtn">click me!</button>
+
+  <script>
+    const elements = document.querySelectorAll("div");
+    elements.forEach(function(element) {
+        document.getElementById('DeleteBtn').addEventListener("click", function() {
+        element.remove();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercise 2</title>
+</head>
+<body>
+    <div id="element"></div>
+    <button id="AddElementBtn">Add New!</button>
+    <script>
+        var AddNewBtn = document.getElementById('AddElementBtn')
+        AddNewBtn.addEventListener('click',function(){
+           const NewElement = document.createElement('div')
+            NewElement.textContent='New element'
+            document.getElementById('element').appendChild(NewElement)
+        })
+        console.log("🚀 ~ AddNewBtn.addEventListener ~ AddNewBtn:", AddNewBtn)
+
+    </script>
+
+</body>
+</html>
