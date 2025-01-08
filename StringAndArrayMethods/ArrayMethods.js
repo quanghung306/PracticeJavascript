@@ -13,7 +13,7 @@ function DoubleElement(arr) {
 DoubleElement(arr);
 //Tính tổng các phần tử trong mảng:
 function SumElement(arr) {
-  const sum = arr.reduce((x, y) => x + y);
+  const sum = arr.reduce((x, y) => x - y);
   console.log(`Mảng sau khi tổng các phần tử là ${sum} `);
 }
 SumElement(arr);

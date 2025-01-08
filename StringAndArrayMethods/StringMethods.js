@@ -40,7 +40,7 @@ function ReverseString(str) {
 function CheckString() { 
   const str= "JavaScript is amazing!"
   const CheckString=str.startsWith('Java') && str.endsWith('!') ;
-  console.log(`Kiểm tra chuỗi có bắt đầu hoặc kết thúc bằng một chuỗi con không: ${CheckString}`)
+  console.log(`Kiểm tra chuỗi có bắt đầu với Java và kết thúc bằng "!": ${CheckString}`)
  }
  CheckString();
 //  Kết hợp các chuỗi từ mảng
