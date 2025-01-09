@@ -6,19 +6,18 @@ function SumNum(n) {
   }
   console.log(`Tổng từ 1 đến ${n} là ${sum}`);
 }
-SumNum(10)
+SumNum(10);
 //Tính tổng các số chẵn từ 1 đến n
 function SumEvenNum(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
-        if(i%2===0){
-            sum += i;
-            
-        }
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 === 0) {
+      sum += i;
     }
-    console.log(`Tổng các số chẵn từ 1 đến ${n} là ${sum}`);
   }
-  SumEvenNum(10);
+  console.log(`Tổng các số chẵn từ 1 đến ${n} là ${sum}`);
+}
+SumEvenNum(10);
 //Bảng cửu chương
 function multiplication() {
   for (let i = 1; i <= 2; i++) {
@@ -44,20 +43,20 @@ function triangle() {
 triangle();
 // In số nguyên tố từ 1 đến n trong mảng
 function elementNum(n) {
-    const prime = [];
-    for (let i = 2; i <= n; i++) {
-        let isPrime = true;
-        for (let j = 2; j <= Math.sqrt(i); j++) {
-            if (i % j === 0) {
-                isPrime = false;
-                break;
-            }
-        }
-        if (isPrime) {
-            prime.push(i);
-        }
+  const prime = [];
+  for (let i = 2; i <= n; i++) {
+    let isPrime = true;
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
     }
-    console.log(`Số nguyên tố từ 1 đến ${n} là ${prime.join(", ")}`);
+    if (isPrime) {
+      prime.push(i);
+    }
+  }
+  console.log(`Số nguyên tố từ 1 đến ${n} là ${prime.join(", ")}`);
 }
 elementNum(10);
 // Tính giai thừa của một số
@@ -87,3 +86,61 @@ function findMaxUCLN(a, b) {
   console.log("UCLN là:", a);
 }
 findMaxUCLN(8, 16);
+//Tính tổng các số trong mảng
+function sum(numbers) {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+}
+const numbers = [1, 2, 3, 4];
+console.log("Tổng các số trong mảng là ", sum(numbers));
+//Đếm số lượng ký tự
+function countChar(str) {
+  let count = 0;
+  for (const index in str) {
+    count++;
+  }
+  return count;
+}
+const str = "HELLO GUY!";
+console.log("Đếm số lượng ký tự :", countChar(str));
+// Tìm số lớn nhất trong mảng
+function findMax(numbers) {
+  let max = arr[0];
+  for (const num of numbers) {
+    if (num > max) {
+      max = num;
+    }
+  }
+  return max;
+}
+const arr = [1, 2, 3, 5, 7, 6];
+console.log("Số lớn nhất trong mảng:", findMax(arr));
+//Lặp qua các thuộc tính của đối tượng
+function elementObject(value) {
+  let result=[];
+  for (const key in value) {
+   result.push(`${key} : ${value[key]}`);
+  }
+  return result
+}
+const oj = {
+  name: "John",
+  age: 25,
+  city: "New York"
+};
+console.log(elementObject(oj));
+//Đảo ngược chuỗi
+function reverseStr(str) {
+  let reversed='';
+  for(let char of str) {
+    reversed = char+ reversed ;
+    }
+    return reversed
+  }
+const str1 = 'OLLEH';
+console.log(reverseStr(str1));
+
+
