@@ -40,7 +40,21 @@ function brotherIf(number) {
   }
 }
 brotherIf(2);
-// Nâng cao: Dùng một function đệ quy để tính giá trị x^{y} \ mod \ m với x, y, m là 3 số cho trước.
+// Nâng cao: Dùng một function đệ quy để tính giá trị x^{y} mod  a với x, y, a là 3 số cho trước.
+let a = 13;
+let x = 3;
+let y = 5;
+function recursive(x, y, a) {
+  if (y == 0) return 1;
+  // Nếu y là số lẻ ta sẽ tính x^y =x * x ^(y-1)
+  if (y % 2 === 1) {
+    return (x * recursive(x, y - 1, a)) % a;
+  }
+  // Nếu y là số chẵn ta sẻ tính x^y = (x^(y/2))^2
+  const half = recursive(x, Math.floor(y / 2), a);
+  return (half * half) % a;
+}
+console.log(" Giá trị", recursive(x, y, a));
 
 // Với một array arr cho trước (chỉ bao gồm các số tự nhiên), thực hiện các yêu cầu sau:
 
@@ -48,7 +62,7 @@ brotherIf(2);
 
 const arr = [5, 6, 7, 8, 9, 10, 11];
 function naturelNum(arr) {
-  return arr.map((x) => x * 2);
+  return arr.map((x) => x * x);
 }
 console.log(naturelNum(arr));
 
@@ -100,43 +114,48 @@ function countNumOne(arrNumber) {
   for (const num of arrNumber) {
     if (num === 1) {
       count++;
-      maxCount = Math.max(maxCount,count);
+      maxCount = Math.max(maxCount, count);
+    } else {
+      count = 0;
     }
   }
-  return maxCount
+  return maxCount;
 }
-console.log('Số lượng các số 1 liên tiếp dài nhất là ',countNumOne(arrNumber));
-
+console.log("Số lượng các số 1 liên tiếp dài nhất là ", countNumOne(arrNumber));
 
 // Cho sẵn 1 array a, hãy thực hiện các thao tác sau:
 
-const array=[1,3,2,5,4,];
+const array = [1, 3, 2, 5, 4];
 
 // Tính tổng các phần tử của a và in ra màn hinh
 function sumArray(array) {
-        return array.reduce((sum,num)=>sum+num);
-  }
-  console.log(sumArray(array));
-  
+  return array.reduce((sum, num) => sum + num);
+}
+console.log("Tổng các phần tử trong mảng là : ", sumArray(array));
+
 // Cho trước 2 số m và n, in ra các phần tử của a nằm trong khoảng [m..n] theo thứ tự từ bé đến lớn.
-let m = 2
-let n = 10
-function filter(array,m,n) {
-     return array.filter((number)=>number >= m && number <= n).sort((x,y)=>x-y)
-  }
-  console.log(`các phần tử của a nằm trong khoảng [${m}..${n}] ${filter(array,m,n)}`);
-  
+let m = 2;
+let n = 10;
+function filter(array, m, n) {
+  return array
+    .filter((number) => number >= m && number <= n)
+    .sort((x, y) => x - y);
+}
+console.log(
+  `các phần tử của a nằm trong khoảng [${m}..${n}] ${filter(array, m, n)}`
+);
+
 // In ra các số nguyên tố trong a.
 function isPrime(number) {
-      if(number < 2 ) return false
-      for (let index = 2; index <= Math.sqrt(number); index++) {
-        if(number % index === 0 ){
-          return false
-        }
-      }
-      return true
+  if (number < 2) return false;
+  for (let index = 2; index <= Math.sqrt(number); index++) {
+    if (number % index === 0) {
+      return false;
     }
-    function printPrime(array) {
-      return array.filter((number)=>isPrime(number))
-      }
+  }
+  return true;
+}
+function printPrime(array) {
+  return array.filter((number) => isPrime(number));
+}
 console.log(printPrime(array));
