@@ -51,8 +51,8 @@ function recursive(x, y, a) {
     return (x * recursive(x, y - 1, a)) % a;
   }
   // Nếu y là số chẵn ta sẻ tính x^y = (x^(y/2))^2
-  const half = recursive(x, Math.floor(y / 2), a);
-  return (half * half) % a;
+  const even = recursive(x, Math.floor(y / 2), a);
+  return (even * even) % a;
 }
 console.log(" Giá trị", recursive(x, y, a));
 
