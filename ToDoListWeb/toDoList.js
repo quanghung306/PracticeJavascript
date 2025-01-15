@@ -12,22 +12,20 @@ function renderTodoList(list) {
     li.innerHTML = `
         <span>${todo.name}</span>
         <div class="actions">
-        <button onclick="completeTodo(${index})">
+        <button class="completeBtn" onclick="completeTodo(${index})">
         ${
-          todo.completed
-            ? '<i class="fa-regular fa-circle-xmark"></i>'
+            todo.completed
+            ? ' <i class="fa-regular fa-circle-xmark"></i>'
             : '<i class="fa-solid fa-check"></i>'
         }
         </button>
-        <button onclick="deleteTodo(${index})"><i class="fa-solid fa-trash-can"></i></button>
+        <button onclick="deleteTodo(${index})"> <i class="fa-solid fa-trash-can"></i> </button>
         </div>
         `;
     todoListElement.appendChild(li);
-   });
-  }
-
-
-//add
+  });
+}
+//add todoList
 function addTodo() {
   const todoName = addInput.value;
   if (todoName) {
@@ -38,25 +36,25 @@ function addTodo() {
     alert("Vui lòng nhập tên công việc!");
   }
 }
-//delete
+//delete todoList
 function deleteTodo(index) {
   todoList.splice(index, 1);
   renderTodoList(todoList);
 }
-// Check completed
+// Check completed todoList
 function completeTodo(index) {
   todoList[index].completed = !todoList[index].completed;
   renderTodoList(todoList);
 }
-//filter Status
+//filter Status todoList
 function filterTodoList(status) {
   let filerTodo = [];
   if (status === "completed") {
     filerTodo = todoList.filter((todo) => todo.completed);
   } else if (status === "not-completed") {
     filerTodo = todoList.filter((todo) => !todo.completed);
-  }else{
-    filerTodo=todoList
+  } else {
+    filerTodo = todoList;
   }
   renderTodoList(filerTodo);
 }
@@ -64,16 +62,15 @@ filterStatus.addEventListener("change", (event) => {
   const selectStatus = event.target.value;
   filterTodoList(selectStatus);
 });
-//sort 
+//sort todoList
 function sortTodoList() {
-    todoList.sort((a, b) => a.name.localeCompare(b.name)); 
-    const currentFilter = filterStatus.value; 
-    filterTodoList(currentFilter); 
+  todoList.sort((a, b) => a.name.localeCompare(b.name));
+  const currentFilter = filterStatus.value;
+  filterTodoList(currentFilter);
 }
-//search
-searchInput.addEventListener('input', function (e) {
-    const search = e.target.value;
-    const filteredList = todoList.filter(todo => todo.name.includes(search));
-    renderTodoList(filteredList);
-   
-  });
+//search todoList
+searchInput.addEventListener("input", function (e) {
+  const search = e.target.value;
+  const filteredList = todoList.filter((todo) => todo.name.includes(search));
+  renderTodoList(filteredList);
+});

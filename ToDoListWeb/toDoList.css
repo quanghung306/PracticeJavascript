@@ -19,6 +19,16 @@ h1 {
     padding-bottom: 10px;
 }
 
+.actions button  {
+    margin-left: 5px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+}
 
 .todo-item {
     display: flex;
@@ -29,20 +39,11 @@ h1 {
     background: #f9f9f9;
     border-radius: 5px;
     border: 1px solid #ddd;
+    
 }
-.todo-item.completed {
+.todo-item.completed span {
     text-decoration: line-through;
-    color: gray;
-  }
-
-.actions button {
-    margin-left: 5px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    color: rgb(131, 131, 131);
 }
 
 .actions button:hover {
