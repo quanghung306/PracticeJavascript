@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="toDoList.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To Do List</h1>
+      <div>
+        <input type="text" id="addInput" class="add-input" />
+        <div>
+          <button class="add-btn" id="addBtn" onclick="addTodo()" >add</button>
+          <button class="sort-btn" id="sortBtn" onclick="sortTodoList()">sort</button>
+          <input type="text" id="searchInput" class="search-input" placeholder="search..." />
+          <div>
+            <select id="filterStatus">
+                <option value="all">Tất cả</option>
+                <option value="completed">Hoàn thành</option>
+                <option value="not-completed">Chưa hoàn thành</option>
+              </select>
+          </div>   
+        </div>
+      </div>
+      <ul id="todoList" class="todo-list"></ul>
+    </div>
+    <script src="toDoList.js"></script>
+  </body>
+</html>
