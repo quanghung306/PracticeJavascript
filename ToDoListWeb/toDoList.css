@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient(to right, rgb(250, 250, 250), #54e8ff);
+}
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -11,17 +15,18 @@
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
     text-align: center;
     padding-bottom: 10px;
+    color: #333; 
 }
 
-.actions button  {
+.actions button {
     margin-left: 5px;
-    background: red;
+    background: #ff4b5c; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -36,20 +41,19 @@ h1 {
     align-items: center;
     margin: 5px 0;
     padding: 10px;
-    background: #f9f9f9;
+    background: #f0f4f7; 
     border-radius: 5px;
     border: 1px solid #ddd;
-    
 }
+
 .todo-item.completed span {
     text-decoration: line-through;
-    color: rgb(131, 131, 131);
+    color: #9e9e9e; 
 }
 
 .actions button:hover {
-    background: #ac1313;
+    background: #d1384c;
 }
-
 
 .add-input {
     width: 100%;
@@ -57,21 +61,24 @@ h1 {
     margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background: #f9f9f9; 
 }
-.search-input{
+
+.search-input {
     width: 200px;
     height: 40px;
     margin-left: 30%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background: #f9f9f9; 
 }
 
 .add-btn,
 .sort-btn {
     margin-top: 10px;
-    width: 90px;
-    background: #28a745;
+    width: 81px;
+    background: #28a745; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -80,11 +87,11 @@ h1 {
 }
 
 .add-btn:hover {
-    background: #218838;
+    background: #218838; 
 }
-#filterStatus {
+ #filterStatus {
     display: inline-block;
-    width: auto; 
+    width: auto;
     background: #28a745;
     color: white;
     border: none;
